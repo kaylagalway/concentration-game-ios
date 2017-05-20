@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23B89243B54BD416D16E0478 /* Pods_concentration_game_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B2559747085C095482F710 /* Pods_concentration_game_iosUITests.framework */; };
+		7E1226ABCECF1BDD08C19954 /* Pods_concentration_game_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CAEE725B875F554ED12D23 /* Pods_concentration_game_iosTests.framework */; };
+		9C99411525612BA7414F1521 /* Pods_concentration_game_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BFEC0C3A313FD27A965719 /* Pods_concentration_game_ios.framework */; };
 		CD2B887E1ECFEF4F00838FA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B887D1ECFEF4F00838FA6 /* AppDelegate.swift */; };
-		CD2B88801ECFEF4F00838FA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B887F1ECFEF4F00838FA6 /* ViewController.swift */; };
-		CD2B88831ECFEF4F00838FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2B88811ECFEF4F00838FA6 /* Main.storyboard */; };
 		CD2B88851ECFEF4F00838FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2B88841ECFEF4F00838FA6 /* Assets.xcassets */; };
-		CD2B88881ECFEF4F00838FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2B88861ECFEF4F00838FA6 /* LaunchScreen.storyboard */; };
 		CD2B88931ECFEF5000838FA6 /* concentration_game_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88921ECFEF5000838FA6 /* concentration_game_iosTests.swift */; };
 		CD2B889E1ECFEF5000838FA6 /* concentration_game_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B889D1ECFEF5000838FA6 /* concentration_game_iosUITests.swift */; };
+		CD2B88B21ECFF06C00838FA6 /* BoardGameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2B88AF1ECFF06C00838FA6 /* BoardGameStoryboard.storyboard */; };
+		CD2B88B31ECFF06C00838FA6 /* BoardGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88B01ECFF06C00838FA6 /* BoardGameViewController.swift */; };
+		CD2B88B41ECFF06C00838FA6 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88B11ECFF06C00838FA6 /* ImageCollectionViewCell.swift */; };
+		CD2B88B61ECFF23F00838FA6 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2B88B51ECFF23F00838FA6 /* ImageCollectionViewCell.xib */; };
+		CD2B88B81ECFF91900838FA6 /* FlickrConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88B71ECFF91900838FA6 /* FlickrConstants.swift */; };
+		CD2B88BA1ECFF92500838FA6 /* FlickrAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88B91ECFF92500838FA6 /* FlickrAPIClient.swift */; };
+		CD2B88BC1ED0009C00838FA6 /* KittenPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88BB1ED0009C00838FA6 /* KittenPhotoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +41,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32CAEE725B875F554ED12D23 /* Pods_concentration_game_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_concentration_game_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48B2559747085C095482F710 /* Pods_concentration_game_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_concentration_game_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F4CCDBC5F2C9B1D1EBF26D2 /* Pods-concentration-game-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-concentration-game-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-concentration-game-iosTests/Pods-concentration-game-iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		7132B61C673510C927F660D4 /* Pods-concentration-game-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-concentration-game-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-concentration-game-iosTests/Pods-concentration-game-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		82BFEC0C3A313FD27A965719 /* Pods_concentration_game_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_concentration_game_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ED92321923E8394EF0DAE91 /* Pods-concentration-game-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-concentration-game-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-concentration-game-ios/Pods-concentration-game-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		97DAE9AB286348FFFD86A3FF /* Pods-concentration-game-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-concentration-game-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-concentration-game-ios/Pods-concentration-game-ios.release.xcconfig"; sourceTree = "<group>"; };
+		B3C5CE7C18BF81515266725C /* Pods-concentration-game-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-concentration-game-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-concentration-game-iosUITests/Pods-concentration-game-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC43425E449F460F1A1970F0 /* Pods-concentration-game-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-concentration-game-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-concentration-game-iosUITests/Pods-concentration-game-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CD2B887A1ECFEF4F00838FA6 /* concentration-game-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "concentration-game-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2B887D1ECFEF4F00838FA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD2B887F1ECFEF4F00838FA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CD2B88821ECFEF4F00838FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD2B88841ECFEF4F00838FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CD2B88871ECFEF4F00838FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD2B88891ECFEF4F00838FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD2B888E1ECFEF5000838FA6 /* concentration-game-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "concentration-game-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2B88921ECFEF5000838FA6 /* concentration_game_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = concentration_game_iosTests.swift; sourceTree = "<group>"; };
@@ -47,6 +60,13 @@
 		CD2B88991ECFEF5000838FA6 /* concentration-game-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "concentration-game-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2B889D1ECFEF5000838FA6 /* concentration_game_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = concentration_game_iosUITests.swift; sourceTree = "<group>"; };
 		CD2B889F1ECFEF5000838FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD2B88AF1ECFF06C00838FA6 /* BoardGameStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BoardGameStoryboard.storyboard; path = UI/BoardGameStoryboard.storyboard; sourceTree = "<group>"; };
+		CD2B88B01ECFF06C00838FA6 /* BoardGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoardGameViewController.swift; path = UI/BoardGameViewController.swift; sourceTree = "<group>"; };
+		CD2B88B11ECFF06C00838FA6 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = UI/ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD2B88B51ECFF23F00838FA6 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageCollectionViewCell.xib; path = UI/ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		CD2B88B71ECFF91900838FA6 /* FlickrConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrConstants.swift; path = APIClient/FlickrConstants.swift; sourceTree = "<group>"; };
+		CD2B88B91ECFF92500838FA6 /* FlickrAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrAPIClient.swift; path = APIClient/FlickrAPIClient.swift; sourceTree = "<group>"; };
+		CD2B88BB1ED0009C00838FA6 /* KittenPhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KittenPhotoModel.swift; path = Models/KittenPhotoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C99411525612BA7414F1521 /* Pods_concentration_game_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E1226ABCECF1BDD08C19954 /* Pods_concentration_game_iosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +90,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B89243B54BD416D16E0478 /* Pods_concentration_game_iosUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		037BB09832F276073AA0B5F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8ED92321923E8394EF0DAE91 /* Pods-concentration-game-ios.debug.xcconfig */,
+				97DAE9AB286348FFFD86A3FF /* Pods-concentration-game-ios.release.xcconfig */,
+				7132B61C673510C927F660D4 /* Pods-concentration-game-iosTests.debug.xcconfig */,
+				6F4CCDBC5F2C9B1D1EBF26D2 /* Pods-concentration-game-iosTests.release.xcconfig */,
+				B3C5CE7C18BF81515266725C /* Pods-concentration-game-iosUITests.debug.xcconfig */,
+				CC43425E449F460F1A1970F0 /* Pods-concentration-game-iosUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CD2B88711ECFEF4F00838FA6 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +117,8 @@
 				CD2B88911ECFEF5000838FA6 /* concentration-game-iosTests */,
 				CD2B889C1ECFEF5000838FA6 /* concentration-game-iosUITests */,
 				CD2B887B1ECFEF4F00838FA6 /* Products */,
+				037BB09832F276073AA0B5F5 /* Pods */,
+				D224299A5BEC61B3D2E9995A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,11 +135,12 @@
 		CD2B887C1ECFEF4F00838FA6 /* concentration-game-ios */ = {
 			isa = PBXGroup;
 			children = (
+				CD2B88AC1ECFF00D00838FA6 /* APIClient */,
+				CD2B88AE1ECFF02600838FA6 /* Models */,
+				CD2B88AD1ECFF01600838FA6 /* ViewModels */,
+				CD2B88AB1ECFF00400838FA6 /* UI */,
 				CD2B887D1ECFEF4F00838FA6 /* AppDelegate.swift */,
-				CD2B887F1ECFEF4F00838FA6 /* ViewController.swift */,
-				CD2B88811ECFEF4F00838FA6 /* Main.storyboard */,
 				CD2B88841ECFEF4F00838FA6 /* Assets.xcassets */,
-				CD2B88861ECFEF4F00838FA6 /* LaunchScreen.storyboard */,
 				CD2B88891ECFEF4F00838FA6 /* Info.plist */,
 			);
 			path = "concentration-game-ios";
@@ -125,6 +164,51 @@
 			path = "concentration-game-iosUITests";
 			sourceTree = "<group>";
 		};
+		CD2B88AB1ECFF00400838FA6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CD2B88AF1ECFF06C00838FA6 /* BoardGameStoryboard.storyboard */,
+				CD2B88B01ECFF06C00838FA6 /* BoardGameViewController.swift */,
+				CD2B88B11ECFF06C00838FA6 /* ImageCollectionViewCell.swift */,
+				CD2B88B51ECFF23F00838FA6 /* ImageCollectionViewCell.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		CD2B88AC1ECFF00D00838FA6 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				CD2B88B71ECFF91900838FA6 /* FlickrConstants.swift */,
+				CD2B88B91ECFF92500838FA6 /* FlickrAPIClient.swift */,
+			);
+			name = APIClient;
+			sourceTree = "<group>";
+		};
+		CD2B88AD1ECFF01600838FA6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		CD2B88AE1ECFF02600838FA6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD2B88BB1ED0009C00838FA6 /* KittenPhotoModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D224299A5BEC61B3D2E9995A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82BFEC0C3A313FD27A965719 /* Pods_concentration_game_ios.framework */,
+				32CAEE725B875F554ED12D23 /* Pods_concentration_game_iosTests.framework */,
+				48B2559747085C095482F710 /* Pods_concentration_game_iosUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD2B88A21ECFEF5000838FA6 /* Build configuration list for PBXNativeTarget "concentration-game-ios" */;
 			buildPhases = (
+				F5885499C6B40FD7BAFE4044 /* [CP] Check Pods Manifest.lock */,
 				CD2B88761ECFEF4F00838FA6 /* Sources */,
 				CD2B88771ECFEF4F00838FA6 /* Frameworks */,
 				CD2B88781ECFEF4F00838FA6 /* Resources */,
+				3D1D87C8049EE7F9690F0F1F /* [CP] Embed Pods Frameworks */,
+				045B537E0272123963107DFD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD2B88A51ECFEF5000838FA6 /* Build configuration list for PBXNativeTarget "concentration-game-iosTests" */;
 			buildPhases = (
+				6F8497F479927F08BF17F762 /* [CP] Check Pods Manifest.lock */,
 				CD2B888A1ECFEF5000838FA6 /* Sources */,
 				CD2B888B1ECFEF5000838FA6 /* Frameworks */,
 				CD2B888C1ECFEF5000838FA6 /* Resources */,
+				8E15F540F05967680B04014F /* [CP] Embed Pods Frameworks */,
+				41DDA8903D5FBBCFBBDBCE1D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD2B88A81ECFEF5000838FA6 /* Build configuration list for PBXNativeTarget "concentration-game-iosUITests" */;
 			buildPhases = (
+				82F11F4C3DFE74D63F5836FD /* [CP] Check Pods Manifest.lock */,
 				CD2B88951ECFEF5000838FA6 /* Sources */,
 				CD2B88961ECFEF5000838FA6 /* Frameworks */,
 				CD2B88971ECFEF5000838FA6 /* Resources */,
+				6829FA2291D722CBBCF2A8A9 /* [CP] Embed Pods Frameworks */,
+				20E49D2BEBF4C1575B210068 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,9 +325,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD2B88881ECFEF4F00838FA6 /* LaunchScreen.storyboard in Resources */,
+				CD2B88B21ECFF06C00838FA6 /* BoardGameStoryboard.storyboard in Resources */,
+				CD2B88B61ECFF23F00838FA6 /* ImageCollectionViewCell.xib in Resources */,
 				CD2B88851ECFEF4F00838FA6 /* Assets.xcassets in Resources */,
-				CD2B88831ECFEF4F00838FA6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,12 +347,154 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		045B537E0272123963107DFD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-concentration-game-ios/Pods-concentration-game-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20E49D2BEBF4C1575B210068 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-concentration-game-iosUITests/Pods-concentration-game-iosUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D1D87C8049EE7F9690F0F1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-concentration-game-ios/Pods-concentration-game-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41DDA8903D5FBBCFBBDBCE1D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-concentration-game-iosTests/Pods-concentration-game-iosTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6829FA2291D722CBBCF2A8A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-concentration-game-iosUITests/Pods-concentration-game-iosUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F8497F479927F08BF17F762 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		82F11F4C3DFE74D63F5836FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8E15F540F05967680B04014F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-concentration-game-iosTests/Pods-concentration-game-iosTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5885499C6B40FD7BAFE4044 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CD2B88761ECFEF4F00838FA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD2B88801ECFEF4F00838FA6 /* ViewController.swift in Sources */,
+				CD2B88B81ECFF91900838FA6 /* FlickrConstants.swift in Sources */,
+				CD2B88B31ECFF06C00838FA6 /* BoardGameViewController.swift in Sources */,
+				CD2B88BA1ECFF92500838FA6 /* FlickrAPIClient.swift in Sources */,
+				CD2B88BC1ED0009C00838FA6 /* KittenPhotoModel.swift in Sources */,
+				CD2B88B41ECFF06C00838FA6 /* ImageCollectionViewCell.swift in Sources */,
 				CD2B887E1ECFEF4F00838FA6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,25 +529,6 @@
 			targetProxy = CD2B889A1ECFEF5000838FA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CD2B88811ECFEF4F00838FA6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD2B88821ECFEF4F00838FA6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CD2B88861ECFEF4F00838FA6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD2B88871ECFEF4F00838FA6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CD2B88A01ECFEF5000838FA6 /* Debug */ = {
@@ -412,6 +628,7 @@
 		};
 		CD2B88A31ECFEF5000838FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ED92321923E8394EF0DAE91 /* Pods-concentration-game-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "concentration-game-ios/Info.plist";
@@ -424,6 +641,7 @@
 		};
 		CD2B88A41ECFEF5000838FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97DAE9AB286348FFFD86A3FF /* Pods-concentration-game-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "concentration-game-ios/Info.plist";
@@ -436,6 +654,7 @@
 		};
 		CD2B88A61ECFEF5000838FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7132B61C673510C927F660D4 /* Pods-concentration-game-iosTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -450,6 +669,7 @@
 		};
 		CD2B88A71ECFEF5000838FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F4CCDBC5F2C9B1D1EBF26D2 /* Pods-concentration-game-iosTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -464,6 +684,7 @@
 		};
 		CD2B88A91ECFEF5000838FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3C5CE7C18BF81515266725C /* Pods-concentration-game-iosUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "concentration-game-iosUITests/Info.plist";
@@ -477,6 +698,7 @@
 		};
 		CD2B88AA1ECFEF5000838FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC43425E449F460F1A1970F0 /* Pods-concentration-game-iosUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "concentration-game-iosUITests/Info.plist";
@@ -507,6 +729,7 @@
 				CD2B88A41ECFEF5000838FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD2B88A51ECFEF5000838FA6 /* Build configuration list for PBXNativeTarget "concentration-game-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +738,7 @@
 				CD2B88A71ECFEF5000838FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD2B88A81ECFEF5000838FA6 /* Build configuration list for PBXNativeTarget "concentration-game-iosUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +747,7 @@
 				CD2B88AA1ECFEF5000838FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

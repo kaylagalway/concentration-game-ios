@@ -1,0 +1,6 @@
+framework module Pods_concentration_game_iosUITests {
+  umbrella header "Pods-concentration-game-iosUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
