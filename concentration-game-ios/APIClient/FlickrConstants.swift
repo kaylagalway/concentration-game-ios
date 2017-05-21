@@ -15,7 +15,7 @@ struct FlickrConstants {
   static let method = "?method=flickr.photos.getRecent"
   static let apiKey = "&api_key="
   static let tags = "&tags=kittens"
-  static let perPage = "&per_page=36"
+  static let perPage = "&per_page=8"
   static let format = "&format=json&nojsoncallback=1"
   
 }

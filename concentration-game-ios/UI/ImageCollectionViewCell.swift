@@ -11,6 +11,14 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
   
+  var isMatched = false
   
+  func flipCard() {
+    
+  }
+  
+  func returnToUnflipped() {
+    
+  }
   
 }

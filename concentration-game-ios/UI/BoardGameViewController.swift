@@ -13,12 +13,22 @@ class BoardGameViewController: UIViewController {
   
   @IBOutlet weak var boardCollectionView: UICollectionView!
   let layout = UICollectionViewFlowLayout()
+  var viewModel: BoardGameViewModel!
   
   override func viewDidLoad() {
+    viewModel = BoardGameViewModel(observer: self)
+    viewModel.fetchAllImageInformation()
     setUpCollectionViewFlowLayout()
-    FlickrAPIClient.fetchRecentPhotos { response in
-      
+    
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5.0) {
+      self.viewModel.difficulty = .medium
     }
+
+  }
+  
+  func reloadData() {
+    //Remake the board
+    
   }
   
   private func setUpCollectionViewFlowLayout() {
