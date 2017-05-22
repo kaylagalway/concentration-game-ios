@@ -12,7 +12,8 @@ import Alamofire
 struct FlickrAPIClient {
   
   static func fetchRecentPhotoInfo(_ completion: @escaping ([[String: Any]]) -> Void) {
-    let flickrUrlString = FlickrConstants.flickrRequestUrl + FlickrConstants.method + FlickrConstants.apiKey + FlickrConstants.flickrKey + FlickrConstants.tags + FlickrConstants.perPage + FlickrConstants.format
+//    let flickrUrlString = FlickrConstants.flickrRequestUrl + FlickrConstants.method + FlickrConstants.apiKey + FlickrConstants.flickrKey + FlickrConstants.tags + FlickrConstants.perPage + FlickrConstants.format
+    let flickrUrlString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=5423dbab63f23a62ca4a986e7cbb35e2&tags=kittens&tagmode=any&per_page=8&format=json&nojsoncallback=1"
     guard let photosUrl = URL(string: flickrUrlString) else {
       return
     }
@@ -25,12 +26,16 @@ struct FlickrAPIClient {
   }
   
   static func fetchImage(withFarm farm: Int, server: String, photoID: String, secret: String, completion: @escaping (UIImage) -> Void) throws {
-    let urlString = "https://farm\(farm).staticflickr.com/\(server)/\(photoID)_\(secret)_m.jpg"
+    let urlString = "https://farm\(farm).staticflickr.com/\(server)/\(photoID)_\(secret)_n.jpg"
+    //"http://farm\(farm).staticflickr.com/\(server)/\(photoID)_\(secret)_n.jpg/"
+    //"https://farm5.staticflickr.com/4196/34645925752_2038f06a66_n.jpg"
     guard let url = URL(string: urlString) else {
       throw(KittenPhotoError.urlError)
     }
-    
-    Alamofire.request(url, encoding: URLEncoding.default).responseJSON { response in
+//    let datathing = NSData(contentsOf: url) as? Data
+//    let image = UIImage(data: datathing as! Data)
+//    completion(image)
+    Alamofire.request(url, encoding: URLEncoding.default).responseString { response in
       completion(UIImage())
     }
   }

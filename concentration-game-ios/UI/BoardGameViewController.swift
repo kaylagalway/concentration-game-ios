@@ -16,13 +16,13 @@ class BoardGameViewController: UIViewController {
   var viewModel: BoardGameViewModel!
   
   override func viewDidLoad() {
-    viewModel = BoardGameViewModel(observer: self)
-    viewModel.fetchAllImageInformation()
     setUpCollectionViewFlowLayout()
-    
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5.0) {
-      self.viewModel.difficulty = .medium
-    }
+    boardCollectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "imageCell")
+    //viewModel = BoardGameViewModel(observer: self)
+    //viewModel.fetchAllImageInformation()
+//    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5.0) {
+//      self.viewModel.difficulty = .medium
+//    }
 
   }
   
@@ -58,7 +58,7 @@ extension BoardGameViewController: UICollectionViewDelegate, UICollectionViewDat
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "boardGameCell", for: indexPath) as! ImageCollectionViewCell
+    let cell = boardCollectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCollectionViewCell
     return cell
   }
   
