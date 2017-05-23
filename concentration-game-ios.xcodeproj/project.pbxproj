@@ -17,12 +17,11 @@
 		CD2B88B21ECFF06C00838FA6 /* BoardGameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2B88AF1ECFF06C00838FA6 /* BoardGameStoryboard.storyboard */; };
 		CD2B88B31ECFF06C00838FA6 /* BoardGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88B01ECFF06C00838FA6 /* BoardGameViewController.swift */; };
 		CD2B88B41ECFF06C00838FA6 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88B11ECFF06C00838FA6 /* ImageCollectionViewCell.swift */; };
-		CD2B88B61ECFF23F00838FA6 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2B88B51ECFF23F00838FA6 /* ImageCollectionViewCell.xib */; };
-		CD2B88B81ECFF91900838FA6 /* FlickrConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88B71ECFF91900838FA6 /* FlickrConstants.swift */; };
 		CD2B88BA1ECFF92500838FA6 /* FlickrAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88B91ECFF92500838FA6 /* FlickrAPIClient.swift */; };
-		CD2B88BC1ED0009C00838FA6 /* KittenPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88BB1ED0009C00838FA6 /* KittenPhoto.swift */; };
+		CD2B88BC1ED0009C00838FA6 /* KittenPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88BB1ED0009C00838FA6 /* KittenPhotoModel.swift */; };
 		CD2B88BE1ED0E10900838FA6 /* BoardGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88BD1ED0E10900838FA6 /* BoardGameViewModel.swift */; };
 		CD2B88C11ED12EA200838FA6 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88C01ED12EA200838FA6 /* GameController.swift */; };
+		CD2B88C31ED481FF00838FA6 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88C21ED481FF00838FA6 /* PlayerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,12 +64,11 @@
 		CD2B88AF1ECFF06C00838FA6 /* BoardGameStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BoardGameStoryboard.storyboard; path = UI/BoardGameStoryboard.storyboard; sourceTree = "<group>"; };
 		CD2B88B01ECFF06C00838FA6 /* BoardGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoardGameViewController.swift; path = UI/BoardGameViewController.swift; sourceTree = "<group>"; };
 		CD2B88B11ECFF06C00838FA6 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = UI/ImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		CD2B88B51ECFF23F00838FA6 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageCollectionViewCell.xib; path = UI/ImageCollectionViewCell.xib; sourceTree = "<group>"; };
-		CD2B88B71ECFF91900838FA6 /* FlickrConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrConstants.swift; path = APIClient/FlickrConstants.swift; sourceTree = "<group>"; };
 		CD2B88B91ECFF92500838FA6 /* FlickrAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrAPIClient.swift; path = APIClient/FlickrAPIClient.swift; sourceTree = "<group>"; };
-		CD2B88BB1ED0009C00838FA6 /* KittenPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KittenPhoto.swift; path = Models/KittenPhoto.swift; sourceTree = "<group>"; };
+		CD2B88BB1ED0009C00838FA6 /* KittenPhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KittenPhotoModel.swift; path = Models/KittenPhotoModel.swift; sourceTree = "<group>"; };
 		CD2B88BD1ED0E10900838FA6 /* BoardGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoardGameViewModel.swift; path = ViewModels/BoardGameViewModel.swift; sourceTree = "<group>"; };
 		CD2B88C01ED12EA200838FA6 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = Controllers/GameController.swift; sourceTree = "<group>"; };
+		CD2B88C21ED481FF00838FA6 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerModel.swift; path = Models/PlayerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +173,6 @@
 				CD2B88AF1ECFF06C00838FA6 /* BoardGameStoryboard.storyboard */,
 				CD2B88B01ECFF06C00838FA6 /* BoardGameViewController.swift */,
 				CD2B88B11ECFF06C00838FA6 /* ImageCollectionViewCell.swift */,
-				CD2B88B51ECFF23F00838FA6 /* ImageCollectionViewCell.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -183,7 +180,6 @@
 		CD2B88AC1ECFF00D00838FA6 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
-				CD2B88B71ECFF91900838FA6 /* FlickrConstants.swift */,
 				CD2B88B91ECFF92500838FA6 /* FlickrAPIClient.swift */,
 			);
 			name = APIClient;
@@ -200,7 +196,8 @@
 		CD2B88AE1ECFF02600838FA6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CD2B88BB1ED0009C00838FA6 /* KittenPhoto.swift */,
+				CD2B88BB1ED0009C00838FA6 /* KittenPhotoModel.swift */,
+				CD2B88C21ED481FF00838FA6 /* PlayerModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -340,7 +337,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD2B88B21ECFF06C00838FA6 /* BoardGameStoryboard.storyboard in Resources */,
-				CD2B88B61ECFF23F00838FA6 /* ImageCollectionViewCell.xib in Resources */,
 				CD2B88851ECFEF4F00838FA6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,11 +500,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD2B88B81ECFF91900838FA6 /* FlickrConstants.swift in Sources */,
 				CD2B88B31ECFF06C00838FA6 /* BoardGameViewController.swift in Sources */,
 				CD2B88BA1ECFF92500838FA6 /* FlickrAPIClient.swift in Sources */,
+				CD2B88C31ED481FF00838FA6 /* PlayerModel.swift in Sources */,
 				CD2B88BE1ED0E10900838FA6 /* BoardGameViewModel.swift in Sources */,
-				CD2B88BC1ED0009C00838FA6 /* KittenPhoto.swift in Sources */,
+				CD2B88BC1ED0009C00838FA6 /* KittenPhotoModel.swift in Sources */,
 				CD2B88C11ED12EA200838FA6 /* GameController.swift in Sources */,
 				CD2B88B41ECFF06C00838FA6 /* ImageCollectionViewCell.swift in Sources */,
 				CD2B887E1ECFEF4F00838FA6 /* AppDelegate.swift in Sources */,

@@ -11,33 +11,49 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
   
-  var isMatched = false
-  var cardFront: UIImageView!
-  var cardBack: UIImageView!
+  var isFlipped = false
+  var kittenImageViewFront: UIImageView!
+  var kittenImageViewBack: UIImageView!
   
   override init(frame: CGRect) {
-    self.cardFront = UIImageView(image: #imageLiteral(resourceName: "frontPlayingCard"))
-    self.cardBack = UIImageView(image: #imageLiteral(resourceName: "backPlayingCard"))
+    self.kittenImageViewFront = UIImageView()
+    self.kittenImageViewBack = UIImageView(image: #imageLiteral(resourceName: "kittenFace"))
     super.init(frame: frame)
-    addViewsToCell()
+    addViews()
   }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   
-  func addViewsToCell() {
-    cardFront.frame = contentView.frame
-    cardBack.frame = contentView.frame
-    contentView.addSubview(cardFront)
+  func addViews() {
+    addFramesAndBordersToImageView(imageView: self.kittenImageViewBack)
+    addFramesAndBordersToImageView(imageView: self.kittenImageViewFront)
+    kittenImageViewBack.backgroundColor = UIColor.black
+    contentView.addSubview(kittenImageViewBack)
   }
   
-  func flipCard() {
-    
+  func addFramesAndBordersToImageView(imageView: UIImageView) {
+    imageView.clipsToBounds = true
+    imageView.contentMode = .scaleAspectFill
+    imageView.frame = contentView.frame
+    imageView.layer.borderColor = UIColor.white.cgColor
+    imageView.layer.borderWidth = 1.0
   }
   
-  func returnToUnflipped() {
-    
+  func flipToKittenImage() {
+    if !isFlipped {
+      UIView.transition(from: self.kittenImageViewBack, to: self.kittenImageViewFront, duration: 0.5, options: .transitionFlipFromRight, completion: nil)
+      isFlipped = true
+    }
+  }
+  
+  func returnCardToUnflipped() {
+    if isFlipped {
+      UIView.transition(from: self.kittenImageViewFront, to: self.kittenImageViewBack, duration: 0.5, options: .transitionFlipFromLeft, completion: nil)
+      UIView.setAnimationDelay(1.0)
+      isFlipped = false
+    }
   }
   
 }

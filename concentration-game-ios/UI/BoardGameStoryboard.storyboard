@@ -25,7 +25,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rmK-xj-PFA" userLabel="BoardCollectionView">
                                 <rect key="frame" x="37.5" y="183" width="300" height="300"/>
-                                <color key="backgroundColor" red="0.15954156089999999" green="0.15954156089999999" blue="0.15954156089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rmK-xj-PFA" secondAttribute="height" multiplier="1:1" id="lvV-hz-zO7"/>
                                 </constraints>
@@ -47,24 +47,42 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoz-ia-tp8">
-                                <rect key="frame" x="166" y="57" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KITTEN MATCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoz-ia-tp8">
+                                <rect key="frame" x="79.5" y="30" width="218" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.74574802161570375" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gp-BH-Slz" userLabel="DifficultyButton">
+                                <rect key="frame" x="132" y="76" width="112.5" height="28"/>
+                                <color key="backgroundColor" red="0.90980392160000001" green="0.28235294119999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0gp-BH-Slz" secondAttribute="height" multiplier="4:1" id="Cd6-1M-3aB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
+                                <state key="normal" title="DIFFICULTY">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="difficultyButtonTapped:" destination="bLc-kh-gAj" eventType="touchUpInside" id="mH9-yp-vDw"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.15954156091370564" green="0.15954156091370564" blue="0.15954156091370564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12182741116751272" green="0.12182741116751272" blue="0.12182741116751272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rmK-xj-PFA" firstAttribute="centerY" secondItem="fca-Zf-xn4" secondAttribute="centerY" id="490-2W-3sw"/>
-                            <constraint firstItem="Zoz-ia-tp8" firstAttribute="top" secondItem="hhu-eu-Cbb" secondAttribute="bottom" constant="37" id="NTS-LG-CTt"/>
+                            <constraint firstItem="0gp-BH-Slz" firstAttribute="top" secondItem="Zoz-ia-tp8" secondAttribute="bottom" constant="10" id="9Xx-8S-nOh"/>
+                            <constraint firstItem="0gp-BH-Slz" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.3" id="Ie7-DC-MP2"/>
+                            <constraint firstItem="Zoz-ia-tp8" firstAttribute="top" secondItem="hhu-eu-Cbb" secondAttribute="bottom" constant="10" id="NTS-LG-CTt"/>
                             <constraint firstItem="rmK-xj-PFA" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="abl-8r-8QP"/>
                             <constraint firstItem="Zoz-ia-tp8" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="ng1-tu-8cr"/>
                             <constraint firstItem="rmK-xj-PFA" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.8" id="v4f-Vl-Tnr"/>
+                            <constraint firstItem="0gp-BH-Slz" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="yDf-zG-xdA"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="boardCollectionView" destination="rmK-xj-PFA" id="vdm-zT-DF6"/>
+                        <outlet property="difficultyButton" destination="0gp-BH-Slz" id="1ky-U7-rxc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fn9-4t-J13" userLabel="First Responder" sceneMemberID="firstResponder"/>
