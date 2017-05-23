@@ -15,8 +15,12 @@ enum DifficultyLevelEnum {
   case hard
 }
 
-protocol BoardGameViewModelDelegate {
-  func allPhotosDidLoad()
+struct ViewModelConstants {
+  static let id = "id"
+  static let farm = "farm"
+  static let secret = "secret"
+  static let server = "server"
+  static let title = "title"
 }
 
 class BoardGameViewModel: NSObject {
@@ -24,6 +28,7 @@ class BoardGameViewModel: NSObject {
   fileprivate static let easyBoard = 16.0
   fileprivate static let mediumBoard = 25.0
   fileprivate static let hardBoard = 36.0
+  fileprivate typealias Constants = ViewModelConstants
   var kittenPhotos = [KittenPhotoModel]()
   weak var observer: BoardGameViewController?
   var gameController = GameController()
@@ -32,10 +37,6 @@ class BoardGameViewModel: NSObject {
     didSet {
       fetchAllImageInformation()
     }
-  }
-  
-  init(observer: BoardGameViewController) {
-    self.observer = observer
   }
   
   var numberOfSquares: Double {
@@ -47,6 +48,10 @@ class BoardGameViewModel: NSObject {
     case .hard:
       return BoardGameViewModel.hardBoard
     }
+  }
+  
+  init(observer: BoardGameViewController) {
+    self.observer = observer
   }
   
   func fetchAllImageInformation() {
@@ -67,7 +72,7 @@ class BoardGameViewModel: NSObject {
   }
   
   func loadImage(photoDict: [String: Any], completion: @escaping (KittenPhotoModel) -> Void) {
-    guard let photoID = photoDict["id"] as? String, let farm = photoDict["farm"] as? Int, let secret = photoDict["secret"] as? String, let server = photoDict["server"] as? String, let title = photoDict["title"] as? String else {
+    guard let photoID = photoDict[Constants.id] as? String, let farm = photoDict[Constants.farm] as? Int, let secret = photoDict[Constants.secret] as? String, let server = photoDict[Constants.server] as? String, let title = photoDict[Constants.title] as? String else {
       return
     }
     try? FlickrAPIClient.fetchImage(withFarm: farm, server: server, photoID: photoID, secret: secret) { image in
@@ -105,11 +110,20 @@ class BoardGameViewModel: NSObject {
     }
     guard gameController.isMatchingPair else {
       observer?.returnCardsToUnflipped(firstCardPath: gameController.currentCards[0], secondCardPath: gameController.currentCards[1])
-      gameController.resetCurrentCards()
+      gameController.resetCurrentCardsArray()
       return
     }
-    
-    
+    gameController.resetCurrentCardsArray()
+    observer?.showMatchAnimation()
+    gameController.updatePlayerScore()
+    checkForFinishedGame()
+  }
+  
+  func checkForFinishedGame() {
+    guard gameController.flippedCards != Int(numberOfSquares) else {
+      observer?.showWin()
+      return
+    }
   }
   
 }

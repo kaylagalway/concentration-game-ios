@@ -47,8 +47,12 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KITTEN MATCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoz-ia-tp8">
-                                <rect key="frame" x="79.5" y="30" width="218" height="36"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FbY-cB-qag">
+                                <rect key="frame" x="39" y="185" width="297" height="297"/>
+                                <color key="backgroundColor" red="0.1218274112" green="0.1218274112" blue="0.1218274112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="KITTEN MATCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoz-ia-tp8" userLabel="KittenMatchTitleLabel">
+                                <rect key="frame" x="78.5" y="30" width="218" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.74574802161570375" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -59,7 +63,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0gp-BH-Slz" secondAttribute="height" multiplier="4:1" id="Cd6-1M-3aB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
                                 <state key="normal" title="DIFFICULTY">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -67,22 +71,56 @@
                                     <action selector="difficultyButtonTapped:" destination="bLc-kh-gAj" eventType="touchUpInside" id="mH9-yp-vDw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MATCH!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDM-Cb-mYi" userLabel="MatchLabel">
+                                <rect key="frame" x="130" y="104" width="116" height="79"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.74574802159999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hr8-jo-N9p" userLabel="NewGameButton">
+                                <rect key="frame" x="112.5" y="617" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.90980392160000001" green="0.28235294119999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hr8-jo-N9p" secondAttribute="height" multiplier="5:1" id="r4P-lz-dA3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
+                                <color key="tintColor" red="0.90980392160000001" green="0.28235294119999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="START NEW GAME">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGameButtonTapped:" destination="bLc-kh-gAj" eventType="touchUpInside" id="s8v-Wc-y74"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12182741116751272" green="0.12182741116751272" blue="0.12182741116751272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rmK-xj-PFA" firstAttribute="centerY" secondItem="fca-Zf-xn4" secondAttribute="centerY" id="490-2W-3sw"/>
-                            <constraint firstItem="0gp-BH-Slz" firstAttribute="top" secondItem="Zoz-ia-tp8" secondAttribute="bottom" constant="10" id="9Xx-8S-nOh"/>
-                            <constraint firstItem="0gp-BH-Slz" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.3" id="Ie7-DC-MP2"/>
-                            <constraint firstItem="Zoz-ia-tp8" firstAttribute="top" secondItem="hhu-eu-Cbb" secondAttribute="bottom" constant="10" id="NTS-LG-CTt"/>
-                            <constraint firstItem="rmK-xj-PFA" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="abl-8r-8QP"/>
-                            <constraint firstItem="Zoz-ia-tp8" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="ng1-tu-8cr"/>
-                            <constraint firstItem="rmK-xj-PFA" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.8" id="v4f-Vl-Tnr"/>
-                            <constraint firstItem="0gp-BH-Slz" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="yDf-zG-xdA"/>
+                            <constraint firstItem="FbY-cB-qag" firstAttribute="width" secondItem="rmK-xj-PFA" secondAttribute="width" multiplier="0.99" id="0ZW-8I-fxZ"/>
+                            <constraint firstItem="rmK-xj-PFA" firstAttribute="centerY" secondItem="fca-Zf-xn4" secondAttribute="centerY" id="490-2W-3sw" userLabel="CollectionViewYConstraint"/>
+                            <constraint firstItem="aDM-Cb-mYi" firstAttribute="bottom" secondItem="rmK-xj-PFA" secondAttribute="top" id="9ME-Og-ZCv" userLabel="MatchLabelBottomConstraint"/>
+                            <constraint firstItem="0gp-BH-Slz" firstAttribute="top" secondItem="Zoz-ia-tp8" secondAttribute="bottom" constant="10" id="9Xx-8S-nOh" userLabel="DifficultyButtonTopConstraint"/>
+                            <constraint firstItem="aDM-Cb-mYi" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="Cat-Qd-1iR" userLabel="MatchLabelXConstraint"/>
+                            <constraint firstItem="FbY-cB-qag" firstAttribute="height" secondItem="rmK-xj-PFA" secondAttribute="height" multiplier="0.99" id="Fd1-KU-g8Y"/>
+                            <constraint firstItem="0gp-BH-Slz" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.3" id="Ie7-DC-MP2" userLabel="DifficultyButtonWidthConstraint"/>
+                            <constraint firstItem="Zoz-ia-tp8" firstAttribute="top" secondItem="hhu-eu-Cbb" secondAttribute="bottom" constant="10" id="NTS-LG-CTt" userLabel="KittenMatchTopConstraint"/>
+                            <constraint firstItem="hr8-jo-N9p" firstAttribute="bottom" secondItem="8Es-YN-Mjh" secondAttribute="top" constant="-20" id="NZy-nt-DAm"/>
+                            <constraint firstItem="aDM-Cb-mYi" firstAttribute="top" secondItem="0gp-BH-Slz" secondAttribute="bottom" id="SBI-7o-pty" userLabel="MatchLabelTopConstraint"/>
+                            <constraint firstItem="rmK-xj-PFA" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="abl-8r-8QP" userLabel="CollectionViewXConstraint"/>
+                            <constraint firstItem="hr8-jo-N9p" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.4" id="cbl-wh-LbK"/>
+                            <constraint firstItem="FbY-cB-qag" firstAttribute="centerY" secondItem="fca-Zf-xn4" secondAttribute="centerY" id="e2U-6n-gFl"/>
+                            <constraint firstItem="Zoz-ia-tp8" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="ng1-tu-8cr" userLabel="KittenMatchXConstraint"/>
+                            <constraint firstItem="FbY-cB-qag" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="qHK-vB-HjH"/>
+                            <constraint firstItem="rmK-xj-PFA" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.8" id="v4f-Vl-Tnr" userLabel="CollectionViewWidthConstraint"/>
+                            <constraint firstItem="0gp-BH-Slz" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="yDf-zG-xdA" userLabel="DifficultyButtonXConstraint"/>
+                            <constraint firstItem="hr8-jo-N9p" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="yF6-Dh-xdJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="FbY-cB-qag" id="lEo-sb-XLY"/>
                         <outlet property="boardCollectionView" destination="rmK-xj-PFA" id="vdm-zT-DF6"/>
                         <outlet property="difficultyButton" destination="0gp-BH-Slz" id="1ky-U7-rxc"/>
+                        <outlet property="matchLabel" destination="aDM-Cb-mYi" id="Z9v-f7-FIi"/>
+                        <outlet property="newGameButton" destination="hr8-jo-N9p" id="u3V-e0-Baq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fn9-4t-J13" userLabel="First Responder" sceneMemberID="firstResponder"/>

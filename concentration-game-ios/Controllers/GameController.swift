@@ -15,6 +15,7 @@ class GameController: NSObject {
   var photoIndexDict = [Int: KittenPhotoModel]()
   var currentCards = [IndexPath]()
   var players = [PlayerModel]()
+  var flippedCards = 0
   
   func addMatchingPair(kittenPhoto: KittenPhotoModel, firstIndex: Int, secondIndex: Int) {
     let matchingPair = MatchingPair(firstIndex, secondIndex)
@@ -22,14 +23,20 @@ class GameController: NSObject {
   }
   
   var isMatchingPair: Bool {
-    guard currentCards[0].row == currentCards[1].row else {
+    let firstCard = currentCards[0].row
+    let secontCard = currentCards[1].row
+    guard photoIndexDict[firstCard] == photoIndexDict[secontCard] else {
       return false
     }
     return true
   }
   
-  func resetCurrentCards() {
+  func resetCurrentCardsArray() {
     currentCards = [IndexPath]()
+  }
+  
+  func updatePlayerScore() {
+    flippedCards += 2
   }
   
 }
