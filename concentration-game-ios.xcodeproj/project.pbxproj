@@ -23,6 +23,7 @@
 		CD2B88C11ED12EA200838FA6 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88C01ED12EA200838FA6 /* GameController.swift */; };
 		CD2B88C31ED481FF00838FA6 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88C21ED481FF00838FA6 /* PlayerModel.swift */; };
 		CD2B88C51ED4A09F00838FA6 /* WinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2B88C41ED4A09F00838FA6 /* WinView.xib */; };
+		CDEDEB6A1ED4E13300F03AA5 /* GameNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEDEB691ED4E13300F03AA5 /* GameNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		CD2B88C01ED12EA200838FA6 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = Controllers/GameController.swift; sourceTree = "<group>"; };
 		CD2B88C21ED481FF00838FA6 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerModel.swift; path = Models/PlayerModel.swift; sourceTree = "<group>"; };
 		CD2B88C41ED4A09F00838FA6 /* WinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WinView.xib; path = UI/WinView.xib; sourceTree = "<group>"; };
+		CDEDEB691ED4E13300F03AA5 /* GameNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameNavigationController.swift; path = UI/GameNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				CD2B88C41ED4A09F00838FA6 /* WinView.xib */,
 				CD2B88B01ECFF06C00838FA6 /* BoardGameViewController.swift */,
 				CD2B88B11ECFF06C00838FA6 /* ImageCollectionViewCell.swift */,
+				CDEDEB691ED4E13300F03AA5 /* GameNavigationController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				CD2B88BC1ED0009C00838FA6 /* KittenPhotoModel.swift in Sources */,
 				CD2B88C11ED12EA200838FA6 /* GameController.swift in Sources */,
 				CD2B88B41ECFF06C00838FA6 /* ImageCollectionViewCell.swift in Sources */,
+				CDEDEB6A1ED4E13300F03AA5 /* GameNavigationController.swift in Sources */,
 				CD2B887E1ECFEF4F00838FA6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

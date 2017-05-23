@@ -19,25 +19,28 @@ class BoardGameViewController: UIViewController {
   fileprivate static let cellReuseID = "imageCell"
   fileprivate static let matchText = "MATCH!"
   fileprivate static let winView = "WinView"
-  fileprivate static let itemPadding: CGFloat = 10.0
-  let layout = UICollectionViewFlowLayout()
-  var winView = UIView()
+  fileprivate let sectionInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
+  fileprivate var winView = UIView()
   var viewModel: BoardGameViewModel!
   
   override func viewDidLoad() {
-    boardCollectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: BoardGameViewController.cellReuseID)
-    boardCollectionView.delegate = self
-    boardCollectionView.dataSource = self
+    setUpCollectionView()
     viewModel = BoardGameViewModel(observer: self)
     viewModel.fetchAllImageInformation()
-    setUpCollectionViewFlowLayout()
     roundButtonEdges()
   }
   
+  func setUpCollectionView() {
+    boardCollectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: BoardGameViewController.cellReuseID)
+    boardCollectionView.delegate = self
+    boardCollectionView.dataSource = self
+    boardCollectionView.layer.borderColor = UIColor.white.cgColor
+    boardCollectionView.layer.borderWidth = 1.0
+  }
+  
   func reloadData() {
-    layout.invalidateLayout()
-    setUpCollectionViewFlowLayout()
-    boardCollectionView.reloadData()
+    boardCollectionView.collectionViewLayout.invalidateLayout()
+    self.boardCollectionView.reloadData()
     animateIndicatorRemoval()
   }
   
@@ -47,20 +50,6 @@ class BoardGameViewController: UIViewController {
     }, completion: { (true) in
       self.activityIndicator.stopAnimating()
     })
-  }
-  
-  private func setUpCollectionViewFlowLayout() {
-    let squaresPerRow = CGFloat(viewModel.numberOfSquares.squareRoot())
-    let halvedWidthOfCollection = floor(boardCollectionView.frame.width / squaresPerRow)
-    let collectionItemSize = halvedWidthOfCollection - BoardGameViewController.itemPadding
-    layout.itemSize = CGSize(width: collectionItemSize, height: collectionItemSize)
-    let margin = (boardCollectionView.frame.width - (collectionItemSize * squaresPerRow)) / 4
-    layout.minimumInteritemSpacing = margin - BoardGameViewController.itemPadding
-    layout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
-    layout.minimumLineSpacing = margin
-    boardCollectionView.setCollectionViewLayout(layout, animated: true)
-    boardCollectionView.layer.borderColor = UIColor.white.cgColor
-    boardCollectionView.layer.borderWidth = 1.0
   }
   
   private func roundButtonEdges() {
@@ -82,10 +71,10 @@ class BoardGameViewController: UIViewController {
   }
   
   func showMatchAnimation() {
-    UIView.animate(withDuration: 1.0, delay: 0.5, options: .curveEaseIn, animations: {
+    UIView.animate(withDuration: 0.3, delay: 0.5, options: .curveEaseIn, animations: {
       self.matchLabel.alpha = 1
     }, completion: { (true) in
-      UIView.animate(withDuration: 1.0, delay: 2.0, options: .curveEaseIn, animations: {
+      UIView.animate(withDuration: 0.3, delay: 1.0, options: .curveEaseIn, animations: {
         self.matchLabel.alpha = 0
       }, completion: nil)
     })
@@ -121,7 +110,7 @@ class BoardGameViewController: UIViewController {
   }
 }
 
-extension BoardGameViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension BoardGameViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
@@ -142,9 +131,29 @@ extension BoardGameViewController: UICollectionViewDelegate, UICollectionViewDat
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let cell = collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
-    cell.flipToKittenImage()
-    viewModel.checkForMatch(indexPath: indexPath)
+    if !cell.isFlipped {
+      cell.flipToKittenImage()
+      viewModel.checkForMatch(indexPath: indexPath)
+    }
   }
   
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let padding = sectionInsets.left * CGFloat(viewModel.squaresPerRow + 1)
+    let remainingWidth = boardCollectionView.frame.width - padding
+    let widthPerItem = remainingWidth / CGFloat(viewModel.squaresPerRow)
+    return CGSize(width: widthPerItem, height: widthPerItem)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return sectionInsets
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return sectionInsets.left
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return sectionInsets.left
+  }
   
 }

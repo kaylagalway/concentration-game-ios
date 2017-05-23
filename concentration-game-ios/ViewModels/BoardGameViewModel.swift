@@ -32,6 +32,7 @@ class BoardGameViewModel: NSObject {
   var kittenPhotos = [KittenPhotoModel]()
   weak var observer: BoardGameViewController?
   var gameController = GameController()
+  var squaresPerRow = 4
   
   var difficulty = DifficultyLevelEnum.easy {
     didSet {
@@ -42,10 +43,13 @@ class BoardGameViewModel: NSObject {
   var numberOfSquares: Double {
     switch difficulty {
     case .easy:
+      squaresPerRow = 4
       return BoardGameViewModel.easyBoard
     case .medium:
+      squaresPerRow = 5
       return BoardGameViewModel.mediumBoard
     case .hard:
+      squaresPerRow = 6
       return BoardGameViewModel.hardBoard
     }
   }
@@ -81,6 +85,7 @@ class BoardGameViewModel: NSObject {
     }
   }
   
+  //add images to random index on board
   func fillBoardWithImages() {
     var indexArray = Array(0...Int(numberOfSquares) - 1)
     for index in 0...((indexArray.count / 2) - 1) {
