@@ -7,7 +7,7 @@ target 'concentration-game-ios' do
 
   # Pods for concentration-game-ios
   pod 'Alamofire', '~> 4.0'
-  pod 'ReachabilitySwift', '~> 2.4'
+  pod 'ReachabilitySwift', '~> 3'
 
   target 'concentration-game-iosTests' do
     inherit! :search_paths

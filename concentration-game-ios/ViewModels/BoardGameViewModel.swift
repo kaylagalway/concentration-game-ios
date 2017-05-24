@@ -59,8 +59,17 @@ class BoardGameViewModel: NSObject {
   }
   
   func fetchAllImageInformation() {
-    FlickrAPIClient.fetchRecentPhotoInfo { [weak self] photos in
+    gameController.resetGame()
+    observer?.resetScoreLabels()
+    FlickrAPIClient.fetchRecentPhotoInfo { [weak self] photosResponse, error in
       let dispatchGroup = DispatchGroup()
+      guard let photos = photosResponse else {
+        self?.observer?.presentRetryError()
+        if let error = error {
+          debugPrint(error)
+        }
+        return
+      }
       for photoInfo in photos {
         dispatchGroup.enter()
         self?.loadImage(photoDict: photoInfo) { [weak self] kittenPhoto in
@@ -79,13 +88,19 @@ class BoardGameViewModel: NSObject {
     guard let photoID = photoDict[Constants.id] as? String, let farm = photoDict[Constants.farm] as? Int, let secret = photoDict[Constants.secret] as? String, let server = photoDict[Constants.server] as? String, let title = photoDict[Constants.title] as? String else {
       return
     }
-    try? FlickrAPIClient.fetchImage(withFarm: farm, server: server, photoID: photoID, secret: secret) { image in
+    FlickrAPIClient.fetchImage(withFarm: farm, server: server, photoID: photoID, secret: secret) { [weak self] imageResponse, error in
+      guard let image = imageResponse else {
+        self?.observer?.presentRetryError()
+        if let error = error {
+          debugPrint(error)
+        }
+        return
+      }
       let kittenPhoto = KittenPhotoModel(photoID: photoID, title: title, image: image)
       completion(kittenPhoto)
     }
   }
   
-  //add images to random index on board
   func fillBoardWithImages() {
     var indexArray = Array(0...Int(numberOfSquares) - 1)
     for index in 0...((indexArray.count / 2) - 1) {
@@ -110,25 +125,32 @@ class BoardGameViewModel: NSObject {
   
   func checkForMatch(indexPath: IndexPath) {
     gameController.currentCards.append(indexPath)
-    guard gameController.currentCards.count == 2 else {
+    guard gameController.didSelectSecondCard else {
       return
     }
-    guard gameController.isMatchingPair else {
+    if gameController.checkForMatch(indexPath: indexPath) {
+      observer?.showMatchAnimation(playerOne: gameController.playerOneScore,playerTwo: gameController.playerTwoScore)
+      gameController.resetCurrentCardsArray()
+      checkForFinishedGame()
+    } else {
       observer?.returnCardsToUnflipped(firstCardPath: gameController.currentCards[0], secondCardPath: gameController.currentCards[1])
       gameController.resetCurrentCardsArray()
-      return
     }
-    gameController.resetCurrentCardsArray()
-    observer?.showMatchAnimation()
-    gameController.updatePlayerScore()
-    checkForFinishedGame()
   }
   
   func checkForFinishedGame() {
     guard gameController.flippedCards != Int(numberOfSquares) else {
-      observer?.showWin()
+      if let winner = gameController.winner {
+       observer?.showWin(winner: winner)
+      } else {
+        observer?.showWin(winner: nil)
+      }
       return
     }
+  }
+  
+  func updateNumberOfPlayers(players: Int) {
+    gameController.numberOfPlayers = players
   }
   
 }

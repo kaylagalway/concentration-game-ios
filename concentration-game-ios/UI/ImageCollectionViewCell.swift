@@ -63,7 +63,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     toView.isHidden = true
     contentView.addSubview(toView)
     addConstraints(toImageView: toView)
-    UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)
+    UIView.transition(from: fromView, to: toView, duration: 0.3, options: [.transitionFlipFromRight, .showHideTransitionViews], completion: nil)
     if isFlipped {
       UIView.setAnimationDelay(1.0)
     }

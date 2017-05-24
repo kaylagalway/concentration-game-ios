@@ -23,7 +23,7 @@
 		CD2B88C11ED12EA200838FA6 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88C01ED12EA200838FA6 /* GameController.swift */; };
 		CD2B88C31ED481FF00838FA6 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B88C21ED481FF00838FA6 /* PlayerModel.swift */; };
 		CD2B88C51ED4A09F00838FA6 /* WinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2B88C41ED4A09F00838FA6 /* WinView.xib */; };
-		CDEDEB6A1ED4E13300F03AA5 /* GameNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEDEB691ED4E13300F03AA5 /* GameNavigationController.swift */; };
+		CDEDEB6D1ED52A2D00F03AA5 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEDEB6C1ED52A2D00F03AA5 /* WinView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,7 @@
 		CD2B88C01ED12EA200838FA6 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = Controllers/GameController.swift; sourceTree = "<group>"; };
 		CD2B88C21ED481FF00838FA6 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerModel.swift; path = Models/PlayerModel.swift; sourceTree = "<group>"; };
 		CD2B88C41ED4A09F00838FA6 /* WinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WinView.xib; path = UI/WinView.xib; sourceTree = "<group>"; };
-		CDEDEB691ED4E13300F03AA5 /* GameNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameNavigationController.swift; path = UI/GameNavigationController.swift; sourceTree = "<group>"; };
+		CDEDEB6C1ED52A2D00F03AA5 /* WinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WinView.swift; path = UI/WinView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +146,6 @@
 				CD2B88AE1ECFF02600838FA6 /* Models */,
 				CD2B88AD1ECFF01600838FA6 /* ViewModels */,
 				CD2B88AB1ECFF00400838FA6 /* UI */,
-				CDEDEB6B1ED50A9C00F03AA5 /* Frameworks */,
 				CD2B887D1ECFEF4F00838FA6 /* AppDelegate.swift */,
 				CD2B88841ECFEF4F00838FA6 /* Assets.xcassets */,
 				CD2B88891ECFEF4F00838FA6 /* Info.plist */,
@@ -179,7 +178,7 @@
 				CD2B88C41ED4A09F00838FA6 /* WinView.xib */,
 				CD2B88B01ECFF06C00838FA6 /* BoardGameViewController.swift */,
 				CD2B88B11ECFF06C00838FA6 /* ImageCollectionViewCell.swift */,
-				CDEDEB691ED4E13300F03AA5 /* GameNavigationController.swift */,
+				CDEDEB6C1ED52A2D00F03AA5 /* WinView.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -215,13 +214,6 @@
 				CD2B88C01ED12EA200838FA6 /* GameController.swift */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		CDEDEB6B1ED50A9C00F03AA5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D224299A5BEC61B3D2E9995A /* Frameworks */ = {
@@ -311,6 +303,7 @@
 				TargetAttributes = {
 					CD2B88791ECFEF4F00838FA6 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 4WHCWF2WQ4;
 						ProvisioningStyle = Automatic;
 					};
 					CD2B888D1ECFEF5000838FA6 = {
@@ -520,9 +513,9 @@
 				CD2B88C31ED481FF00838FA6 /* PlayerModel.swift in Sources */,
 				CD2B88BE1ED0E10900838FA6 /* BoardGameViewModel.swift in Sources */,
 				CD2B88BC1ED0009C00838FA6 /* KittenPhotoModel.swift in Sources */,
+				CDEDEB6D1ED52A2D00F03AA5 /* WinView.swift in Sources */,
 				CD2B88C11ED12EA200838FA6 /* GameController.swift in Sources */,
 				CD2B88B41ECFF06C00838FA6 /* ImageCollectionViewCell.swift in Sources */,
-				CDEDEB6A1ED4E13300F03AA5 /* GameNavigationController.swift in Sources */,
 				CD2B887E1ECFEF4F00838FA6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,6 +652,7 @@
 			baseConfigurationReference = 8ED92321923E8394EF0DAE91 /* Pods-concentration-game-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4WHCWF2WQ4;
 				INFOPLIST_FILE = "concentration-game-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kayla.concentration-game-ios";
@@ -672,6 +666,7 @@
 			baseConfigurationReference = 97DAE9AB286348FFFD86A3FF /* Pods-concentration-game-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4WHCWF2WQ4;
 				INFOPLIST_FILE = "concentration-game-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kayla.concentration-game-ios";

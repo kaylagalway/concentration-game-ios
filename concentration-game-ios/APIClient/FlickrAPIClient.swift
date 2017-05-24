@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import ReachabilitySwift
 
 struct FlickrAPIConstants {
   
@@ -28,39 +29,56 @@ struct FlickrAPIConstants {
 }
 
 enum FlickrAPIClientError: Error {
+  case networkUnreachable
   case invalidURL
-  case unknownError
+  case invalidResponse
 }
 
 struct FlickrAPIClient {
   
   fileprivate typealias Constants = FlickrAPIConstants
   
-  static func fetchRecentPhotoInfo(_ completion: @escaping ([[String: Any]]) -> Void) {
-    let flickrUrlString = Constants.flickrRequestUrl + Constants.searchMethod + Constants.apiKey + Constants.flickrKey + Constants.tags + Constants.tagMode + Constants.perPage + Constants.format
-    guard let photosUrl = URL(string: flickrUrlString) else {
+  static func fetchRecentPhotoInfo(_ completion: @escaping ([[String: Any]]?, FlickrAPIClientError?) -> Void) {
+    guard let reachabilityManager = Reachability(), reachabilityManager.isReachable else {
+     completion(nil, FlickrAPIClientError.networkUnreachable)
       return
     }
+    let flickrUrlString = Constants.flickrRequestUrl + Constants.searchMethod + Constants.apiKey + Constants.flickrKey + Constants.tags + Constants.tagMode + Constants.perPage + Constants.format
+    guard let photosUrl = URL(string: flickrUrlString) else {
+      completion(nil, FlickrAPIClientError.invalidURL)
+      return
+    }
+    
     Alamofire.request(photosUrl, encoding: URLEncoding.default).responseJSON { response in
       guard let responseDict = response.result.value as? [String: Any], let photosDict = responseDict[Constants.photos] as? [String: Any], let photosArray = photosDict[Constants.photo] as? [[String: Any]] else {
+        completion(nil, FlickrAPIClientError.invalidResponse)
         return
       }
-      completion(photosArray)
+      completion(photosArray, nil)
     }
   }
   
-  static func fetchImage(withFarm farm: Int, server: String, photoID: String, secret: String, completion: @escaping (UIImage) -> Void) throws {
+  static func fetchImage(withFarm farm: Int, server: String, photoID: String, secret: String, completion: @escaping (UIImage?, FlickrAPIClientError?) -> Void) {
+    guard let reachabilityManager = Reachability(), reachabilityManager.isReachable else {
+      completion(nil, FlickrAPIClientError.networkUnreachable)
+      return
+    }
     let urlString = "https://farm\(farm).staticflickr.com/\(server)/\(photoID)_\(secret)_n.jpg"
     guard let url = URL(string: urlString) else {
-      throw(FlickrAPIClientError.invalidURL)
+      completion(nil, FlickrAPIClientError.invalidURL)
+      return
     }
     
     Alamofire.request(url).responseData { responseData in
       guard let data = responseData.data, let image = UIImage(data: data) else {
-        //This needs to pass an error into completion
+        completion(nil, FlickrAPIClientError.invalidResponse)
         return
       }
-      completion(image)
+      completion(image, nil)
     }
   }
+  
+  
+  
+  
 }

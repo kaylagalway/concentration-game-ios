@@ -8,10 +8,15 @@
 
 import Foundation
 
-struct PlayerModel: Hashable {
+class PlayerModel {
   
   let playerName: String
   var playerScore: Int
+  
+  init(playerName: String, playerScore: Int) {
+    self.playerName = playerName
+    self.playerScore = playerScore
+  }
   
   var hashValue: Int {
     return playerName.hashValue

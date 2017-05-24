@@ -23,6 +23,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="KITTEN MATCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoz-ia-tp8" userLabel="KittenMatchTitleLabel">
+                                <rect key="frame" x="78" y="30" width="218" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.74574802161570375" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tw7-bF-88Q" userLabel="OptionsStackView">
+                                <rect key="frame" x="94" y="81" width="187.5" height="27"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gp-BH-Slz" userLabel="DifficultyButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="89" height="27"/>
+                                        <color key="backgroundColor" red="0.90980392160000001" green="0.28235294119999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
+                                        <state key="normal" title="DIFFICULTY">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="difficultyButtonTapped:" destination="bLc-kh-gAj" eventType="touchUpInside" id="mH9-yp-vDw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbG-Tw-SYv">
+                                        <rect key="frame" x="99" y="0.0" width="88.5" height="27"/>
+                                        <color key="backgroundColor" red="0.90980392160000001" green="0.28235294119999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
+                                        <state key="normal" title="PLAYERS">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playersButtonTapped:" destination="bLc-kh-gAj" eventType="touchUpInside" id="YAJ-Ic-QnV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tw7-bF-88Q" secondAttribute="height" multiplier="7:1" id="dI4-Zk-zu6"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MATCH!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDM-Cb-mYi" userLabel="MatchLabel">
+                                <rect key="frame" x="111" y="108" width="154" height="75"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.88363893161619445" green="0.93430977002294879" blue="0.97134755710659904" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rmK-xj-PFA" userLabel="BoardCollectionView">
                                 <rect key="frame" x="37.5" y="183" width="300" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -51,39 +93,33 @@
                                 <rect key="frame" x="39" y="185" width="297" height="297"/>
                                 <color key="backgroundColor" red="0.1218274112" green="0.1218274112" blue="0.1218274112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="KITTEN MATCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoz-ia-tp8" userLabel="KittenMatchTitleLabel">
-                                <rect key="frame" x="78.5" y="30" width="218" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.74574802161570375" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gp-BH-Slz" userLabel="DifficultyButton">
-                                <rect key="frame" x="132" y="76" width="112.5" height="28"/>
-                                <color key="backgroundColor" red="0.90980392160000001" green="0.28235294119999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="P5j-K0-w5q" userLabel="PlayersStackView">
+                                <rect key="frame" x="37.5" y="525.5" width="300" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAYER ONE : 0 MATCHES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVk-wW-Gyk">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAYER TWO: 0 MATCHES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzg-xp-0Md">
+                                        <rect key="frame" x="0.0" y="30" width="300" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="0gp-BH-Slz" secondAttribute="height" multiplier="4:1" id="Cd6-1M-3aB"/>
+                                    <constraint firstAttribute="width" secondItem="P5j-K0-w5q" secondAttribute="height" multiplier="5:1" id="dUw-tp-znh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
-                                <state key="normal" title="DIFFICULTY">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="difficultyButtonTapped:" destination="bLc-kh-gAj" eventType="touchUpInside" id="mH9-yp-vDw"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MATCH!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDM-Cb-mYi" userLabel="MatchLabel">
-                                <rect key="frame" x="111" y="104" width="154" height="79"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" red="0.88363893161619445" green="0.93430977002294879" blue="0.97134755710659904" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hr8-jo-N9p" userLabel="NewGameButton">
-                                <rect key="frame" x="112.5" y="617" width="150" height="30"/>
+                                <rect key="frame" x="94" y="605.5" width="187.5" height="41.5"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.28235294119999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="hr8-jo-N9p" secondAttribute="height" multiplier="5:1" id="r4P-lz-dA3"/>
+                                    <constraint firstAttribute="width" secondItem="hr8-jo-N9p" secondAttribute="height" multiplier="4.5:1" id="r4P-lz-dA3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                 <color key="tintColor" red="0.90980392160000001" green="0.28235294119999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="START NEW GAME">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -96,22 +132,25 @@
                         <color key="backgroundColor" red="0.12182741116751272" green="0.12182741116751272" blue="0.12182741116751272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FbY-cB-qag" firstAttribute="width" secondItem="rmK-xj-PFA" secondAttribute="width" multiplier="0.99" id="0ZW-8I-fxZ" userLabel="IndicatorWidthConstraint"/>
+                            <constraint firstItem="tw7-bF-88Q" firstAttribute="top" secondItem="Zoz-ia-tp8" secondAttribute="bottom" constant="15" id="2Tw-pg-fIC" userLabel="OptionsStackTopConstraint"/>
                             <constraint firstItem="rmK-xj-PFA" firstAttribute="centerY" secondItem="fca-Zf-xn4" secondAttribute="centerY" id="490-2W-3sw" userLabel="CollectionViewYConstraint"/>
                             <constraint firstItem="aDM-Cb-mYi" firstAttribute="bottom" secondItem="rmK-xj-PFA" secondAttribute="top" id="9ME-Og-ZCv" userLabel="MatchLabelBottomConstraint"/>
-                            <constraint firstItem="0gp-BH-Slz" firstAttribute="top" secondItem="Zoz-ia-tp8" secondAttribute="bottom" constant="10" id="9Xx-8S-nOh" userLabel="DifficultyButtonTopConstraint"/>
+                            <constraint firstItem="P5j-K0-w5q" firstAttribute="width" secondItem="rmK-xj-PFA" secondAttribute="width" id="AkM-Cv-gDZ" userLabel="PlayersStackWidthConstraint"/>
                             <constraint firstItem="aDM-Cb-mYi" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="Cat-Qd-1iR" userLabel="MatchLabelXConstraint"/>
                             <constraint firstItem="FbY-cB-qag" firstAttribute="height" secondItem="rmK-xj-PFA" secondAttribute="height" multiplier="0.99" id="Fd1-KU-g8Y" userLabel="IndicatorHeightConstraint"/>
-                            <constraint firstItem="0gp-BH-Slz" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.3" id="Ie7-DC-MP2" userLabel="DifficultyButtonWidthConstraint"/>
+                            <constraint firstItem="P5j-K0-w5q" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="GMc-MD-w8f" userLabel="PlayersStackXConstraint"/>
                             <constraint firstItem="Zoz-ia-tp8" firstAttribute="top" secondItem="hhu-eu-Cbb" secondAttribute="bottom" constant="10" id="NTS-LG-CTt" userLabel="KittenMatchTopConstraint"/>
                             <constraint firstItem="hr8-jo-N9p" firstAttribute="bottom" secondItem="8Es-YN-Mjh" secondAttribute="top" constant="-20" id="NZy-nt-DAm" userLabel="NewGameButtonBottomConstraint"/>
-                            <constraint firstItem="aDM-Cb-mYi" firstAttribute="top" secondItem="0gp-BH-Slz" secondAttribute="bottom" id="SBI-7o-pty" userLabel="MatchLabelTopConstraint"/>
+                            <constraint firstItem="tw7-bF-88Q" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.5" id="R03-1w-fEc" userLabel="OptionsStackWidthConstraint"/>
                             <constraint firstItem="rmK-xj-PFA" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="abl-8r-8QP" userLabel="CollectionViewXConstraint"/>
-                            <constraint firstItem="hr8-jo-N9p" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.4" id="cbl-wh-LbK" userLabel="NewGameButtonWidthConstraint"/>
+                            <constraint firstItem="hr8-jo-N9p" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.5" id="cbl-wh-LbK" userLabel="NewGameButtonWidthConstraint"/>
                             <constraint firstItem="FbY-cB-qag" firstAttribute="centerY" secondItem="fca-Zf-xn4" secondAttribute="centerY" id="e2U-6n-gFl" userLabel="IndicatorYConstraint"/>
+                            <constraint firstItem="tw7-bF-88Q" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="nAu-0N-SvY" userLabel="OptionsStackXConstraint"/>
                             <constraint firstItem="Zoz-ia-tp8" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="ng1-tu-8cr" userLabel="KittenMatchXConstraint"/>
                             <constraint firstItem="FbY-cB-qag" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="qHK-vB-HjH" userLabel="IndicatorXConstraint"/>
+                            <constraint firstItem="P5j-K0-w5q" firstAttribute="bottom" secondItem="hr8-jo-N9p" secondAttribute="top" constant="-20" id="rOi-BD-BLA" userLabel="PlayersStackBottomConstraint"/>
                             <constraint firstItem="rmK-xj-PFA" firstAttribute="width" secondItem="fca-Zf-xn4" secondAttribute="width" multiplier="0.8" id="v4f-Vl-Tnr" userLabel="CollectionViewWidthConstraint"/>
-                            <constraint firstItem="0gp-BH-Slz" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="yDf-zG-xdA" userLabel="DifficultyButtonXConstraint"/>
+                            <constraint firstItem="aDM-Cb-mYi" firstAttribute="top" secondItem="tw7-bF-88Q" secondAttribute="bottom" id="wTB-bl-9FZ" userLabel="MatchLabelTopConstraint"/>
                             <constraint firstItem="hr8-jo-N9p" firstAttribute="centerX" secondItem="fca-Zf-xn4" secondAttribute="centerX" id="yF6-Dh-xdJ" userLabel="NewGameButtonXConstraint"/>
                         </constraints>
                     </view>
@@ -121,6 +160,9 @@
                         <outlet property="difficultyButton" destination="0gp-BH-Slz" id="1ky-U7-rxc"/>
                         <outlet property="matchLabel" destination="aDM-Cb-mYi" id="Z9v-f7-FIi"/>
                         <outlet property="newGameButton" destination="hr8-jo-N9p" id="u3V-e0-Baq"/>
+                        <outlet property="playerOneLabel" destination="eVk-wW-Gyk" id="ud2-vg-orm"/>
+                        <outlet property="playerTwoLabel" destination="tzg-xp-0Md" id="bxX-uN-UQZ"/>
+                        <outlet property="playersButton" destination="HbG-Tw-SYv" id="zG2-bl-bWH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fn9-4t-J13" userLabel="First Responder" sceneMemberID="firstResponder"/>
