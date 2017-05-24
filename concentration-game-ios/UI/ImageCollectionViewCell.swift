@@ -27,33 +27,45 @@ class ImageCollectionViewCell: UICollectionViewCell {
   }
   
   func addViews() {
-    addFramesAndBordersToImageView(imageView: self.kittenImageViewBack)
-    addFramesAndBordersToImageView(imageView: self.kittenImageViewFront)
-    kittenImageViewBack.backgroundColor = UIColor.black
     contentView.addSubview(kittenImageViewBack)
+    configure(imageView: kittenImageViewBack)
+    configure(imageView: kittenImageViewFront)
+    addConstraints(toImageView: kittenImageViewBack)
+    kittenImageViewBack.backgroundColor = UIColor.black
   }
   
-  func addFramesAndBordersToImageView(imageView: UIImageView) {
+  func configure(imageView: UIImageView) {
     imageView.clipsToBounds = true
     imageView.contentMode = .scaleAspectFill
-    imageView.frame = contentView.frame
     imageView.layer.borderColor = UIColor.white.cgColor
     imageView.layer.borderWidth = 1.0
   }
   
-  func flipToKittenImage() {
-    if !isFlipped {
-      UIView.transition(from: self.kittenImageViewBack, to: self.kittenImageViewFront, duration: 0.5, options: .transitionFlipFromRight, completion: nil)
-      isFlipped = true
-    }
+  func addConstraints(toImageView imageView: UIImageView) {
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
+    imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+    imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+    imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
   }
   
-  func returnCardToUnflipped() {
+  func resetImage() {
+    isFlipped = true
+    flipCard()
+  }
+  
+  func flipCard() {
+    defer {
+      isFlipped = !isFlipped
+    }
+    let fromView: UIImageView! = isFlipped ? kittenImageViewFront : kittenImageViewBack
+    let toView: UIImageView! = isFlipped ? kittenImageViewBack : kittenImageViewFront
+    toView.isHidden = true
+    contentView.addSubview(toView)
+    addConstraints(toImageView: toView)
+    UIView.transition(from: fromView, to: toView, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)
     if isFlipped {
-      UIView.transition(from: self.kittenImageViewFront, to: self.kittenImageViewBack, duration: 0.5, options: .transitionFlipFromLeft, completion: nil)
       UIView.setAnimationDelay(1.0)
-      isFlipped = false
     }
   }
-  
 }

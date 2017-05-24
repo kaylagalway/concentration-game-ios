@@ -146,6 +146,7 @@
 				CD2B88AE1ECFF02600838FA6 /* Models */,
 				CD2B88AD1ECFF01600838FA6 /* ViewModels */,
 				CD2B88AB1ECFF00400838FA6 /* UI */,
+				CDEDEB6B1ED50A9C00F03AA5 /* Frameworks */,
 				CD2B887D1ECFEF4F00838FA6 /* AppDelegate.swift */,
 				CD2B88841ECFEF4F00838FA6 /* Assets.xcassets */,
 				CD2B88891ECFEF4F00838FA6 /* Info.plist */,
@@ -214,6 +215,13 @@
 				CD2B88C01ED12EA200838FA6 /* GameController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CDEDEB6B1ED50A9C00F03AA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D224299A5BEC61B3D2E9995A /* Frameworks */ = {

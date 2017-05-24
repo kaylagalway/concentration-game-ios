@@ -39,8 +39,8 @@ class BoardGameViewController: UIViewController {
   }
   
   func reloadData() {
+    boardCollectionView.reloadData()
     boardCollectionView.collectionViewLayout.invalidateLayout()
-    self.boardCollectionView.reloadData()
     animateIndicatorRemoval()
   }
   
@@ -65,8 +65,8 @@ class BoardGameViewController: UIViewController {
     let firstCell = boardCollectionView.cellForItem(at: firstCardPath) as! ImageCollectionViewCell
     let secondCell = boardCollectionView.cellForItem(at: secondCardPath) as! ImageCollectionViewCell
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
-      firstCell.returnCardToUnflipped()
-      secondCell.returnCardToUnflipped()
+      firstCell.flipCard()
+      secondCell.flipCard()
     }
   }
   
@@ -124,7 +124,7 @@ extension BoardGameViewController: UICollectionViewDelegate, UICollectionViewDat
     let cell = boardCollectionView.dequeueReusableCell(withReuseIdentifier: BoardGameViewController.cellReuseID, for: indexPath) as! ImageCollectionViewCell
     if let kittenImage = viewModel.imageForCell(index: indexPath.row) {
       cell.kittenImageViewFront.image = kittenImage
-      cell.returnCardToUnflipped()
+      cell.resetImage()
     }
     return cell
   }
@@ -132,7 +132,7 @@ extension BoardGameViewController: UICollectionViewDelegate, UICollectionViewDat
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let cell = collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
     if !cell.isFlipped {
-      cell.flipToKittenImage()
+      cell.flipCard()
       viewModel.checkForMatch(indexPath: indexPath)
     }
   }
