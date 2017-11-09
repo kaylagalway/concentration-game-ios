@@ -92,9 +92,11 @@ class BoardGameViewController: UIViewController {
       self.matchLabel.alpha = 1
       self.updatePlayerOneLabel(score: playerOne)
       self.updatePlayerTwoLabel(score: playerTwo)
+      self.boardCollectionView.isUserInteractionEnabled = true
     }, completion: { (true) in
       UIView.animate(withDuration: 0.3, delay: 1.0, options: .curveEaseIn, animations: {
         self.matchLabel.alpha = 0
+        self.boardCollectionView.isUserInteractionEnabled = true
       }, completion: nil)
     })
   }
