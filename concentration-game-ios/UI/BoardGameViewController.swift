@@ -36,6 +36,7 @@ class BoardGameViewController: UIViewController {
   }
   
   func reloadData() {
+    boardCollectionView.isUserInteractionEnabled = true
     boardCollectionView.reloadData()
     boardCollectionView.collectionViewLayout.invalidateLayout()
     animateIndicatorRemoval()
@@ -74,6 +75,7 @@ class BoardGameViewController: UIViewController {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
       firstCell.flipCard()
       secondCell.flipCard()
+      self.boardCollectionView.isUserInteractionEnabled = true
     }
   }
   
@@ -183,6 +185,10 @@ class BoardGameViewController: UIViewController {
     }
     alertController.addAction(retryOption)
     present(alertController, animated: true, completion: nil)
+  }
+  
+  func twoCardsFlipped() {
+    boardCollectionView.isUserInteractionEnabled = false
   }
   
 }

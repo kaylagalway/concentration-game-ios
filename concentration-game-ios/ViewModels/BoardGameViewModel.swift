@@ -128,6 +128,7 @@ class BoardGameViewModel: NSObject {
     guard gameController.didSelectSecondCard else {
       return
     }
+    observer?.twoCardsFlipped()
     if gameController.checkForMatch(indexPath: indexPath) {
       observer?.showMatchAnimation(playerOne: gameController.playerOneScore,playerTwo: gameController.playerTwoScore)
       gameController.resetCurrentCardsArray()
